@@ -7,7 +7,7 @@ import torch
 st.title("Fighterjets image classification")
 st.subheader(':blue[_Created by Wouter Selis & Kieran Cornelissen & Gilles Witters_] :male-technologist:', divider='rainbow')
 
-st.write("In this streamlit app you can test our classification model for fighterjets. The goal of this project is to classify 5 different fighterjets: F-1117 Nighthawk, F-16 Fighting Falcon, F-22 Raptor, F-4 Phantom, MiG-29 Fulcrum. We also compared our model with Google Teachable Machine and you can see the results below. Our model is created with fastAi and resnet50. To test our model you can upload an image and view the prediction and how certain our model is.")
+st.write("In this streamlit app you can test our classification model for fighterjets. The goal of this project is to classify 5 different fighterjets: F-1117 Nighthawk, F-16 Fighting Falcon, F-22 Raptor, F-4 Phantom, MiG-29 Fulcrum. We also compared our model with Google Teachable Machine and you can see the results below. Our model is created with fastAi, resnet50 and uses the fit_one_cycle() method for better performance in speed and accuracy. To test our model you can upload an image and view the prediction and how certain our model is.")
 
 #image uploader to predict
 allowed_types = ("jpg", "jpeg", "png")
@@ -36,7 +36,7 @@ st.write("")
 st.subheader("Confusion matrix models: ")
 st.write("")
 
-st.write("Here we compare the confusion matrix from our model with the confusion matrix from Google Teachable Machine. As you can see the accuracy of our model is in all cases the better one in classifying the planes except for the F-4 Phantom. In general our model is more accurate than Google Teachable Machine.")
+st.write("Here we compare the confusion matrix from our model with the confusion matrix from Google Teachable Machine. As you can see the accuracy of our model is in all cases higher. This means our model is more accurate in classifying fighterjets.")
 
 with st.container():
     col1, col2 = st.columns(2)
@@ -44,7 +44,7 @@ with st.container():
         st.write("**Our model:**")
         st.image('./images/CM_OurModel.png')
         st.write("Accuracy per class:")
-        lst=["F-1117 Nighthawk: 96%","F-16 Fighting Falcon: 81%","F-22 Raptor: 84%","F-4 Phantom: 71%","MiG-29 Fulcrum: 90%"]
+        lst=["F-1117 Nighthawk: 96%","F-16 Fighting Falcon: 75%","F-22 Raptor: 84%","F-4 Phantom: 91%","MiG-29 Fulcrum: 97%"]
         for i in lst:
             st.markdown("- " + i)
        
@@ -62,7 +62,7 @@ st.divider()
 st.write("")
 st.subheader("Losses: ")
 st.write("")
-st.write("Here we can compare the loss of the models. The difference between our loss and the Google Teachable Machine loss is that our validation loss stabilize and slightly descents but with Google Teachable Machine it slightly increases. When the validation loss starts to increase this most likely means that the model is overfitted. We can also see that our final validation loss ends on +-0.6 and Google Teachable Machine's validation loss ends on +-0.8.")
+st.write("Here we can compare the loss of the models. The difference between our loss and the Google Teachable Machine loss is that our validation loss has a big peak and rapidly descents. This means our model was overfitting and the learning rate was changed accordly due to adam. With Google Teachable Machine the validation loss first started to increas and overfit but then it stabilized and increases slightly. We can also see that our final validation loss ends under 0.5 and Google Teachable Machine's validation loss ends on +-0.8.")
 
 with st.container():
     col1, col2 = st.columns(2)
