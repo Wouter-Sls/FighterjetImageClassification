@@ -36,10 +36,24 @@ if uploaded_file is not None:
 
     st.write("Our model:")
     st.image('./images/CM_OurModel.png')
+    st.write("Accuracy per class:")
+    st.write("F-1117_Nighthawk: 96%")
+    st.write("F-16_Fighting_Falcon: 81%")
+    st.write("F-22_Raptor: 84%")
+    st.write("F-4_Phantom: 71%")
+    st.write("MiG_29_Fulcrum: 90%")
+    st.write("")
 
     st.write("Google teachable machine model:")
     st.image('./images/CM_GTM.png')
-
+    st.write("Accuracy per class:")
+    st.write("F-1117_Nighthawk: 93%")
+    st.write("F-16_Fighting_Falcon: 58%")
+    st.write("F-22_Raptor: 78%")
+    st.write("F-4_Phantom: 77%")
+    st.write("MiG_29_Fulcrum: 80%")
+    st.write("")
+    
     #Compare losses
     st.write("")
     st.subheader("Losses: ")
