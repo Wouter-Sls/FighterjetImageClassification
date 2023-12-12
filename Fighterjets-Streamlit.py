@@ -17,7 +17,7 @@ allowed_types = ("jpg", "jpeg", "png")
 uploaded_file = st.file_uploader("Choose an image...", type=allowed_types)
 
 #load model
-loaded_model = load_learner("models/model50Extra")
+loaded_model = load_learner("./models/model50Extra")
 
 
 if uploaded_file is not None:
