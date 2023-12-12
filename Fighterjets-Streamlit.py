@@ -1,7 +1,10 @@
 import streamlit as st
 from PIL import Image
-from fastai.vision.all import load_learner, ClassificationInterpretation
+from fastai.vision.all import load_learner
 import torch
+import pathlib
+plt = platform.system()
+if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
 #Title
 st.title("Fighterjets image classification")
