@@ -40,4 +40,16 @@ if uploaded_file is not None:
     st.write("Google teachable machine model:")
     st.image('./images/CM_GTM.png')
 
+    #Compare losses
+    st.write("")
+    st.subheader("Losses: ")
+    st.write("")
+    
+
+    st.write("Our loss per epoch:")
+    st.image('./images/Loss_OurModel.png')
+
+    st.write("Google teachable machine losses per epoch:")
+    st.image('./images/Loss_GTM.png')
+
 
