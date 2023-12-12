@@ -43,7 +43,7 @@ with st.container():
     col1, col2 = st.columns(2)
     with col1:
         st.write("**Our model:**")
-        st.image(WindowsPath('./images/CM_OurModel.png'))
+        st.image(str(WindowsPath('./images/CM_OurModel.png')))
         st.write("Accuracy per class:")
         lst=["F-1117 Nighthawk: 96%","F-16 Fighting Falcon: 75%","F-22 Raptor: 84%","F-4 Phantom: 91%","MiG-29 Fulcrum: 97%"]
         for i in lst:
@@ -51,7 +51,7 @@ with st.container():
        
     with col2:
         st.write("**Google teachable machine model:**")
-        st.image(WindowsPath('./images/CM_GTM.png'))
+        st.image(str(WindowsPath('./images/CM_GTM.png')))
         st.write("Accuracy per class:")
         lst_GTM=["F-1117 Nighthawk: 93%","F-16 Fighting Falcon: 58%","F-22 Raptor: 78%","F-4 Phantom: 77%","MiG-29 Fulcrum: 80%"]
         for i in lst_GTM:
@@ -69,9 +69,9 @@ with st.container():
     col1, col2 = st.columns(2)
     with col1:
         st.write("**Our loss per epoch:**")
-        st.image(WindowsPath('./images/Loss_OurModel.png'))
+        st.image(str(WindowsPath('./images/Loss_OurModel.png')))
     with col2:
         st.write("**Google teachable machine losses per epoch:**")
-        st.image(WindowsPath('./images/Loss_GTM.png'))
+        st.image(str(WindowsPath('./images/Loss_GTM.png')))
 
 
