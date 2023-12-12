@@ -2,19 +2,20 @@ import streamlit as st
 from PIL import Image
 from fastai.vision.all import load_learner
 import torch
+from pathlib import WindowsPath
 
 #Title
 st.title("Fighterjets image classification")
 st.subheader(':blue[_Created by Wouter Selis & Kieran Cornelissen & Gilles Witters_] :male-technologist:', divider='rainbow')
 
 st.write("In this streamlit app you can test our classification model for fighterjets. The goal of this project is to classify 5 different fighterjets: F-1117 Nighthawk, F-16 Fighting Falcon, F-22 Raptor, F-4 Phantom, MiG-29 Fulcrum. We also compared our model with Google Teachable Machine and you can see the results below. Our model is created with fastAi, resnet50 and uses the fit_one_cycle() method for better performance in speed and accuracy. To test our model you can upload an image and view the prediction and how certain our model is.")
-#load model
-loaded_model = load_learner("./models/model50Extra")
+
 #image uploader to predict
 allowed_types = ("jpg", "jpeg", "png")
 uploaded_file = st.file_uploader("Choose an image...", type=allowed_types)
 
-
+#load model
+loaded_model = load_learner(WindowsPath("./models/model50Extra"))
 
 
 if uploaded_file is not None:
