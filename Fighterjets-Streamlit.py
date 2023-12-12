@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 from fastai.vision.all import load_learner
 import torch
-from pathlib import WindowsPath, Path
+from pathlib import Path
 
 #Title
 st.title("Fighterjets image classification")
@@ -15,7 +15,7 @@ allowed_types = ("jpg", "jpeg", "png")
 uploaded_file = st.file_uploader("Choose an image...", type=allowed_types)
 
 #load model
-loaded_model = load_learner(WindowsPath("./models/model50Extra"))
+loaded_model = load_learner(strr(Path("./models/model50Extra")))
 
 
 if uploaded_file is not None:
